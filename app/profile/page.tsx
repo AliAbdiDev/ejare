@@ -1,6 +1,7 @@
 import { Avatar, AvatarImage } from "@/core/components/ui/avatar";
 import { Button } from "@/core/components/ui/button";
 import { Item, ItemDescription, ItemTitle } from "@/core/components/ui/item";
+import Navbar from "@/core/features/home/components/Navbar";
 import { AvatarFallback } from "@radix-ui/react-avatar";
 import { ArrowLeft, Bell, ChevronLeft, GavelIcon, Info, Instagram, LogOut, LucideProps, MessageCircleMoreIcon, Twitter, UserPlus2Icon } from "lucide-react";
 import { ForwardRefExoticComponent, ReactNode, RefAttributes } from "react";
@@ -62,6 +63,7 @@ export default function Page() {
                 <li className=""><Twitter className="size-5" /></li>
                 <li className=""> <Instagram className="size-5" /></li>
             </ul>
+            <Navbar />
         </>
     );
 }

@@ -153,9 +153,8 @@ export const ChatConversationView = ({ chatId }: ChatConversationViewProps) => {
   }
 
   return (
-    <section dir="rtl">
-      <Card className="overflow-hidden py-0">
-        <CardContent className="px-0">
+    <section className="h-full">
+
           <div className="flex items-center justify-between gap-2 border-b px-3 py-3">
             <div className="flex items-center gap-2">
               <Button
@@ -305,8 +304,7 @@ export const ChatConversationView = ({ chatId }: ChatConversationViewProps) => {
               </Button>
             </div>
           </div>
-        </CardContent>
-      </Card>
+  
     </section>
   );
 };

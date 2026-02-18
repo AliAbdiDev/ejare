@@ -51,8 +51,8 @@ export default function RootLayout({
           antialiased bg-accent
         `}
       >
-         {children}
-          <Toaster richColors />
+        <div className="container-page bg-background">{children}</div>
+        <Toaster richColors />
       </body>
     </html>
   );

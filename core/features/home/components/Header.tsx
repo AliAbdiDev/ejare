@@ -6,6 +6,7 @@ import { Input } from "@/core/components/ui/input";
 import { cn } from "@/core/utils/utils";
 import { ArrowRight, Car, CassetteTapeIcon, ChevronLeft, LucideProps, Search, TabletSmartphone, Tv2, X } from "lucide-react";
 import { Dispatch, ForwardRefExoticComponent, RefAttributes, SetStateAction, useMemo, useState } from "react";
+import { fullWidthClassName} from "react-remove-scroll-bar";
 
 const SearchInput = ({ className }: { className?: string }) => {
 
@@ -103,7 +104,7 @@ const DrawerFilters = ({ open, setOpen }: DrawerFiltersProps) => {
 
     return (
         <Drawer open={open} onOpenChange={setOpen} closeThreshold={0.6}>
-            <DrawerContent className="min-h-[75vh]">
+            <DrawerContent className="min-h-[75vh] max-w-md m-auto">
                 <DrawerHeader className="relative border-b">
                     <Button type="button" size={'icon'} className="bg-white/20 absolute right-3 top-[9px]"
                         onClick={() => {
@@ -157,8 +158,8 @@ function Header() {
     return (
 
         <>
-            <header className="pb-12">
-                <div className="fixed top-0 inset-0 z-10 h-12">
+            <header className="pb-16">
+                <div className={cn(fullWidthClassName, "fixed top-0 inset-x-0 z-10 h-16")}>
                     <div className="container-page min-h-0 border-b border-accent/20 bg-background">
                         <div className="flex justify-between items-center h-16">
                             <SearchInput className="w-full" />
