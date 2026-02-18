@@ -44,6 +44,48 @@ const bookmarkedPosts: TPostCardList = [
     },
     footerContent: <BookmarkCardFooter />,
   },
+  {
+    id: "bookmark-2",
+    hrefLink: "#",
+    inActiveLink: true,
+    title:
+      " درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم",
+    price: 54000,
+    location: "امامت",
+    image: {
+      src: "/common/fake.webp",
+      alt: "product",
+    },
+    footerContent: <BookmarkCardFooter />,
+  },
+  {
+    id: "bookmark-2",
+    hrefLink: "#",
+    inActiveLink: true,
+    title:
+      " درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم",
+    price: 54000,
+    location: "امامت",
+    image: {
+      src: "/common/fake.webp",
+      alt: "product",
+    },
+    footerContent: <BookmarkCardFooter />,
+  },
+  {
+    id: "bookmark-2",
+    hrefLink: "#",
+    inActiveLink: true,
+    title:
+      " درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم",
+    price: 54000,
+    location: "امامت",
+    image: {
+      src: "/common/fake.webp",
+      alt: "product",
+    },
+    footerContent: <BookmarkCardFooter />,
+  },
 ];
 
 export default function BookmarksPage() {

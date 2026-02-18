@@ -45,7 +45,7 @@ export function PostCard({
           </CardDescription>
         </div>
 
-        <div className="relative size-[136px] overflow-hidden rounded-md shrink-0">
+        <div className="relative size-[134px] overflow-hidden rounded-md shrink-0">
           <CardHeader>
             <Image alt={image.alt} src={image.src} fill className="size-full" />
           </CardHeader>
