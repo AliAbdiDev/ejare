@@ -18,5 +18,7 @@
     "lib": "@/core/services/shadcn",
     "hooks": "@/core/hooks"
   },
-  "registries": {}
+  "registries": {
+    "@acme": "https://acme.com/r/{name}.json"
+  }
 }
