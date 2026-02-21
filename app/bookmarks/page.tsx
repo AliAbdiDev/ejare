@@ -1,19 +1,10 @@
-import { PostCardList, TPostCardList } from "@/core/components/custom/block/post-card";
-import { Button } from "@/core/components/ui/button";
-import { LucideShare2, Trash } from "lucide-react";
+import {
+  TPostCardList,
+} from "@/core/components/custom/block/post-card";
+import AppHeader from "@/core/components/custom/layout/AppHeader";
+import { BookmarkedPostsList } from "@/core/features/bookmarks/components/BookmarkedPostsList";
+import Navbar from "@/core/features/home/components/Navbar";
 
-const BookmarkCardFooter = () => {
-  return (
-    <div className="grid w-full grid-cols-2 gap-2">
-      <Button type="button" variant="outline" size="sm" className="h-8">
-     <Trash/> حذف 
-      </Button>
-      <Button type="button" variant="outline" size="sm" className="h-8">
-        <LucideShare2/> اشتراک گذاری
-      </Button>
-    </div>
-  );
-};
 
 const bookmarkedPosts: TPostCardList = [
   {
@@ -28,7 +19,6 @@ const bookmarkedPosts: TPostCardList = [
       src: "/common/fake.webp",
       alt: "product",
     },
-    footerContent: <BookmarkCardFooter />,
   },
   {
     id: "bookmark-2",
@@ -42,7 +32,6 @@ const bookmarkedPosts: TPostCardList = [
       src: "/common/fake.webp",
       alt: "product",
     },
-    footerContent: <BookmarkCardFooter />,
   },
   {
     id: "bookmark-2",
@@ -56,7 +45,6 @@ const bookmarkedPosts: TPostCardList = [
       src: "/common/fake.webp",
       alt: "product",
     },
-    footerContent: <BookmarkCardFooter />,
   },
   {
     id: "bookmark-2",
@@ -70,7 +58,6 @@ const bookmarkedPosts: TPostCardList = [
       src: "/common/fake.webp",
       alt: "product",
     },
-    footerContent: <BookmarkCardFooter />,
   },
   {
     id: "bookmark-2",
@@ -84,10 +71,18 @@ const bookmarkedPosts: TPostCardList = [
       src: "/common/fake.webp",
       alt: "product",
     },
-    footerContent: <BookmarkCardFooter />,
   },
 ];
 
 export default function BookmarksPage() {
-  return <PostCardList cardItems={bookmarkedPosts} />;
+  return (
+    <>
+      <AppHeader title="نشان شده ها" />
+      <main className="pt-22.25 pb-6">
+        <BookmarkedPostsList cardItems={bookmarkedPosts} />
+      </main>
+      <Navbar />
+    </>
+  );
 }
+

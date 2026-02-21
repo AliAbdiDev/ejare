@@ -6,7 +6,7 @@ import { ChatListItem } from "@/core/features/chat/components/ChatListItem";
 import { useChatStore } from "@/core/features/chat/hooks/useChatStore";
 
 export const ChatListView = () => {
-  const { ready, chats, reportChat, deleteChat } = useChatStore();
+  const { ready, chats, reportChat, blockChat, deleteChat } = useChatStore();
 
   const handleReport = (chatId: string, recipientName: string) => {
     reportChat(chatId);
@@ -24,15 +24,13 @@ export const ChatListView = () => {
     toast.success(`Chat with ${recipientName} was deleted.`);
   };
 
+  const handleBlock = (chatId: string, recipientName: string) => {
+    blockChat(chatId);
+    toast.success(`Chat with ${recipientName} was blocked.`);
+  };
+
   return (
     <section className="space-y-4" dir="rtl">
-      <div className="space-y-1">
-        <h1 className="text-lg font-iransans-bold">Chats</h1>
-        <p className="text-sm text-muted-foreground font-iransans-light">
-          Mobile chat list. Tap a chat to open messages.
-        </p>
-      </div>
-
       {!ready ? (
         <Card className="py-4">
           <CardContent className="px-4 text-sm text-muted-foreground">
@@ -51,16 +49,13 @@ export const ChatListView = () => {
             <ChatListItem
               key={chat.id}
               chat={chat}
+              onBlock={handleBlock}
               onReport={handleReport}
               onDelete={handleDelete}
             />
           ))}
         </ul>
       )}
-
-      <p className="text-[11px] text-muted-foreground">
-        Messages can be reported, but only chats can be deleted.
-      </p>
     </section>
   );
 };

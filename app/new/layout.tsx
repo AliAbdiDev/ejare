@@ -8,7 +8,9 @@ export default function NewLayout({
   return (
     <>
       <AppHeader title="ثبت آگهی" />
-      <main className="py-6">{children}</main>
+      <main className="pt-22.25 pb-6">
+        {children}
+      </main>
     </>
   );
 }

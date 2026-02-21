@@ -45,7 +45,13 @@ const readStoreFromSession = (): ChatStore => {
       return cloneDefaultStore();
     }
 
-    return parsed as ChatStore;
+    return {
+      chats: parsed.chats.map((chat) => ({
+        ...chat,
+        blocked: Boolean(chat.blocked),
+      })),
+      messages: parsed.messages,
+    } as ChatStore;
   } catch {
     return cloneDefaultStore();
   }
@@ -161,6 +167,18 @@ export const useChatStore = () => {
     [updateStore]
   );
 
+  const blockChat = useCallback(
+    (chatId: string) => {
+      updateStore((prev) => ({
+        ...prev,
+        chats: prev.chats.map((chat) =>
+          chat.id === chatId ? { ...chat, blocked: true } : chat
+        ),
+      }));
+    },
+    [updateStore]
+  );
+
   const reportMessage = useCallback(
     (chatId: string, messageId: string) => {
       updateStore((prev) => ({
@@ -199,6 +217,7 @@ export const useChatStore = () => {
     sendMessage,
     markMessageSeen,
     reportChat,
+    blockChat,
     reportMessage,
     deleteChat,
   };

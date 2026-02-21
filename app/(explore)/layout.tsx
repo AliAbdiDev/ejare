@@ -6,14 +6,12 @@ export default function MainLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
     <>
       <Header />
       <main className="py-10">
         {children}
       </main>
-
       <Navbar />
     </>
   );

@@ -8,7 +8,10 @@ export default function ProfileLayout({
   return (
     <>
       <AppHeader title="پروفایل" />
-      <main className="py-6">{children}</main>
+      <main className="h-full overflow-y-auto pt-22.25 pb-6">
+        {children}
+      </main>
     </>
   );
 }
+

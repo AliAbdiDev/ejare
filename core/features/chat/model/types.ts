@@ -23,6 +23,7 @@ export type ChatThread = {
   recipientName: string;
   recipientHandle: string;
   reported: boolean;
+  blocked: boolean;
 };
 
 export type ChatStore = {

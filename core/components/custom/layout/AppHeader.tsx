@@ -9,7 +9,7 @@ export default function AppHeader({ title, className }: AppHeaderProps) {
   return (
     <header
       className={cn(
-        "-mx-6 flex h-[65px] w-[calc(100%+3rem)] items-center border-b border-accent/20 bg-background px-6",
+        "fixed top-0 inset-x-0 z-20 flex h-[65px] max-w-md mx-auto items-center border-b border-accent/20 bg-background px-4",
         className
       )}
     >

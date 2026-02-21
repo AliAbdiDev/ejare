@@ -10,18 +10,21 @@ export const DEFAULT_CHAT_STORE: ChatStore = {
       recipientName: "Alex Morgan",
       recipientHandle: "@alex.m",
       reported: false,
+      blocked: false,
     },
     {
       id: "chat-sam",
       recipientName: "Sam Lee",
       recipientHandle: "@sam.lee",
       reported: false,
+      blocked: false,
     },
     {
       id: "chat-jordan",
       recipientName: "Jordan Kim",
       recipientHandle: "@jordan.k",
       reported: false,
+      blocked: false,
     },
   ],
   messages: {
